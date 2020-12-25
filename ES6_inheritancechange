@@ -1,0 +1,21 @@
+//ES6 rules are as follows: the keyword this will only refer to the object from which it was called initially.
+
+class Header {
+  constructor() {
+    this.color = "Red";
+  }
+
+  changeColor = function() {
+    document.getElementById("demo").innerHTML += this;
+  }
+}
+
+myheader = new Header();
+
+//The window object calls the function:
+window.addEventListener("load", myheader.changeColor);
+
+//A button object calls the function:
+document.getElementById("btn").addEventListener("click", myheader.changeColor);
+
+
